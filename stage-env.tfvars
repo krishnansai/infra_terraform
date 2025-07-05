@@ -1,0 +1,36 @@
+
+region             = "us-east-1"
+vpc_cidr_block     = "31.0.0.0/16"
+public_subnets     = ["31.0.0.0/24", "31.0.1.0/24", "31.0.2.0/24"]
+private_subnets    = ["31.0.3.0/24", "31.0.4.0/24", "31.0.5.0/24"]
+availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+az_counts          = "3"
+private_az_counts  = "3"
+eks_cluster_name   = "testing-env"
+cluster_autoscaler = "true"
+key_id             = "66e757c7-3074-41dc-92c3-63627c7351a9"
+tags = {
+  Environment = "Development"
+  Cluster     = "testing-env"
+  Owner       = "DevOps Team"
+  Project     = "Integrate-Infrastructure"
+  CreatedBY   = "TerraformDevops"
+}
+kube-proxy_addon_version    = "v1.30.7-eksbuild.2"
+coredns_addon_version       = "v1.11.4-eksbuild.2"
+vpc-cni_addon_version       = "v1.19.2-eksbuild.1"
+ebs-csidriver_addon_version = "v1.38.1-eksbuild.2"
+fstype                      = "xfs"
+legacy_security_groups      = "false"
+log_retention               = "90"
+name                = "testing-env"
+env                 = "staging"
+eks_ami_id          = "ami-000846a6ec7cc4dfe"
+instance_size       = "t3.large"
+key_name            = ""
+root_volume_size    = "100"
+eks_version         = "1.32"
+worker_desired_size = "1"
+worker_max_size     = "3"
+worker_min_size     = "1"
+aws_account_id      = "5250139002704"
