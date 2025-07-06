@@ -176,3 +176,57 @@ variable "eks_cluster_name" {
 variable "env" {
     description = "AWS EKS Cluster Environment"
 }
+
+############################## RDS Variables ##################################
+
+variable "rds_allocated_storage" {
+  description = "The allocated storage in gigabytes"
+  type        = number
+}
+
+variable "rds_engine" {
+  description = "The database engine to use"
+  type        = string
+}
+
+variable "rds_engine_version" {
+  description = "The engine version"
+  type        = string
+}
+
+variable "rds_instance_class" {
+  description = "The instance type of the RDS instance"
+  type        = string
+}
+
+variable "rds_db_name" {
+  description = "The name of the database"
+  type        = string
+}
+
+variable "rds_username" {
+  description = "The master username for the database"
+  type        = string
+}
+
+variable "rds_password" {
+  description = "The master password for the database"
+  type        = string
+}
+
+variable "rds_parameter_group_name" {
+  description = "The parameter group to associate with the DB instance"
+  type        = string
+}
+
+variable "rds_skip_final_snapshot" {
+  description = "Whether to skip the final snapshot of the database before deletion"
+  type        = bool
+  default     = true
+}
+
+variable "rds_publicly_accessible" {
+  description = "Whether the DB instance is publicly accessible"
+  type        = bool
+  default     = false
+}

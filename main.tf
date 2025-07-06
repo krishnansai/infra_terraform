@@ -92,3 +92,27 @@ module "compute" {
     module.networking.aws_nat_gateway_id,
   ]
 }
+
+resource "aws_db_subnet_group" "rds" {
+  name       = "rds-db-subnet-group"
+  subnet_ids = module.networking.private_subnet_ids
+  tags       = var.tags
+}
+
+module "rds" {
+  source                  = "./modules/rds"
+  allocated_storage       = var.rds_allocated_storage
+  engine                  = var.rds_engine
+  engine_version          = var.rds_engine_version
+  instance_class          = var.rds_instance_class
+  identifier              = var.rds_db_name
+  db_name                 = var.rds_db_name
+  username                = var.rds_username
+  password                = var.rds_password
+  parameter_group_name    = var.rds_parameter_group_name
+  db_subnet_group_name    = aws_db_subnet_group.rds.name
+  vpc_security_group_ids  = [module.networking.aws_security_group_worker_node_id]
+  skip_final_snapshot     = var.rds_skip_final_snapshot
+  publicly_accessible     = var.rds_publicly_accessible
+  tags                    = var.tags
+}

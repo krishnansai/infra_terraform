@@ -1,4 +1,3 @@
-
 region             = "eu-north-1"
 vpc_cidr_block     = "31.0.0.0/16"
 public_subnets     = ["31.0.0.0/24", "31.0.1.0/24", "31.0.2.0/24"]
@@ -34,3 +33,15 @@ worker_desired_size = "1"
 worker_max_size     = "15"
 worker_min_size     = "1"
 aws_account_id      = "585912760451"
+rds_allocated_storage     = 100
+rds_engine                = "postgres"
+rds_engine_version        = "15.3"
+rds_instance_class        = "db.t3.large"
+rds_db_name               = "prod_db"
+rds_username              = "produser"
+rds_password              = "prodchangeme123"
+rds_parameter_group_name  = "default.postgres15"
+rds_db_subnet_group_name  = "prod-db-subnet-group"
+rds_vpc_security_group_ids = ["sg-xxxxxxxxxxxxxxxxx"]
+rds_skip_final_snapshot   = false
+rds_publicly_accessible   = false

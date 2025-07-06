@@ -227,6 +227,14 @@ resource "aws_security_group" "worker_node_sg" {
     protocol         = "tcp"
     self             = true  # Whitelist self SG
   }
+  # mysql over TCP (port 3306) to self whitelist
+  ingress {
+    description      = "Node to node MySQL"
+    from_port        = 3306
+    to_port          = 3306
+    protocol         = "tcp"
+    self             = true  # Whitelist self SG
+  }
 
   # All traffic to self whitelist
   ingress {

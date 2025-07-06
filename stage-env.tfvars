@@ -1,8 +1,7 @@
-
 region             = "us-east-1"
 vpc_cidr_block     = "31.0.0.0/16"
 public_subnets     = ["31.0.0.0/24", "31.0.1.0/24", "31.0.2.0/24"]
-private_subnets    = ["31.0.3.0/24", "31.0.4.0/24", "31.0.5.0/24"]
+private_subnets    = ["31.0.3.0/24", "31.0.4.0/24", "31.0.5.0/24", "31.0.6.0/24"]
 availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
 az_counts          = "3"
 private_az_counts  = "3"
@@ -33,4 +32,14 @@ eks_version         = "1.32"
 worker_desired_size = "1"
 worker_max_size     = "3"
 worker_min_size     = "1"
-aws_account_id      = "5250139002704"
+aws_account_id      = "250139002704"
+rds_allocated_storage     = 20
+rds_engine                = "mysql"
+rds_engine_version        = "8.0.36"
+rds_instance_class        = "db.t3.micro"
+rds_db_name               = "stagemysqldb"
+rds_username              = "mysqluser"
+rds_password              = "bXlhZG1pbg=="
+rds_parameter_group_name  = "default.mysql8.0"
+rds_skip_final_snapshot   = true
+rds_publicly_accessible   = false
