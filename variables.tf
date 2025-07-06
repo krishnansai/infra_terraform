@@ -230,3 +230,8 @@ variable "rds_publicly_accessible" {
   type        = bool
   default     = false
 }
+
+variable "bucket_name" {
+  description = "The name of the S3 bucket for state storage."
+  type        = string
+}

@@ -116,3 +116,9 @@ module "rds" {
   publicly_accessible     = var.rds_publicly_accessible
   tags                    = var.tags
 }
+
+# module "storage" {
+#   source      = "./modules/storage"
+#   bucket_name = var.bucket_name
+#   tags        = var.tags
+# }

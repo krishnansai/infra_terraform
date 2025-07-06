@@ -43,3 +43,4 @@ rds_password              = "bXlhZG1pbg=="
 rds_parameter_group_name  = "default.mysql8.0"
 rds_skip_final_snapshot   = true
 rds_publicly_accessible   = false
+bucket_name = "cybergkstate"
