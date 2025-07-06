@@ -1,10 +1,10 @@
 region             = "us-east-1"
 vpc_cidr_block     = "31.0.0.0/16"
-public_subnets     = ["31.0.0.0/24", "31.0.1.0/24"]
-private_subnets    = ["31.0.3.0/24", "31.0.4.0/24"]
+public_subnets     = ["31.0.0.0/24", "31.0.1.0/24", "31.0.2.0/24"]
+private_subnets    = ["31.0.3.0/24", "31.0.4.0/24", "31.0.5.0/24"]
 availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
-az_counts          = "2"
-private_az_counts  = "2"
+az_counts          = "3"
+private_az_counts  = "3"
 eks_cluster_name   = "staging-env"
 cluster_autoscaler = "true"
 key_id             = "66e757c7-3074-41dc-92c3-63627c7351a9"
