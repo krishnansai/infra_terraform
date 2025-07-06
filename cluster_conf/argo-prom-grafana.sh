@@ -28,11 +28,11 @@ done
 
 echo "ArgoCD URL: http://$ARGOCD_SERVER"
 
-ARGO_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
+export ARGO_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
 echo "ArgoCD admin password: $ARGO_PWD"
 
-kubectl create secret generic argocd-github-secret --from-literal=token="$ARGOCD_HTTPS_SYNC" --namespace=argocd
-
+kubectl create secret generic argocd-github-secret --from-literal=token=${ARGOCD_HTTPS_SYNC}
+sleep 10s
 # ========== CONFIGURATION ==========
 NAMESPACE="monitoring"
 RELEASE_NAME="prometheus"
